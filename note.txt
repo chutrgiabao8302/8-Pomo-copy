@@ -1,0 +1,27 @@
+params khi can truyen len du lieu nho
+body khi can tryen 1 dong du lieu
+phuong thuc GET (chi dung truy van) khong ho tro truyen body
+
+"/:_id" có nghĩa là truyền tham số (params)
+bản chất của hàm find là hàm read trong CRUD (vì đọc trnong 
+database và trả về kết quả nếu tìm được)
+
+
+
+sử dụng các câu lệnh sau:
+
+npm i 
+npm i nodemon --save-dev
+
+npm start
+
+
+
+
+
+
+
+
+
+
+

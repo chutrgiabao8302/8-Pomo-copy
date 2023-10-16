@@ -1,7 +1,9 @@
 import Product from "./model.js";
 
-async function post_create_product(req, res) {
-  const { product_name, price, brand, desc, origin } = req.body;
+// POST_create function
+async function POST_create(req, res) {
+  const { product_name, price, quantity, catergory, brand, desc, origin } =
+    req.body;
 
   let myProduct = await Product.findOne({
     product_name: product_name,
@@ -17,6 +19,8 @@ async function post_create_product(req, res) {
     let newProduct = await new Product({
       product_name: product_name,
       price: price,
+      quantity: quantity,
+      catergory: catergory,
       brand: brand,
       desc: desc,
       origin: origin,
@@ -31,13 +35,16 @@ async function post_create_product(req, res) {
   }
 }
 
-async function put_update_product(req, res) {
-  const { _id, product_name, price, brand, desc, origin } = req.body;
+async function PUT_udpate(req, res) {
+  const { _id, product_name, price, quantity, catergory, brand, desc, origin } =
+    req.body;
 
   try {
     let myProduct = await Product.findById(_id);
     myProduct.product_name = product_name || myProduct.product_name;
     myProduct.price = price || myProduct.price;
+    myProduct.quantity = quantity || myProduct.quantity;
+    myProduct.catergory = catergory || myProduct.catergory;
     myProduct.brand = brand || myProduct.brand;
     myProduct.desc = desc || myProduct.desc;
     myProduct.origin = origin || myProduct.origin;
@@ -58,7 +65,7 @@ async function put_update_product(req, res) {
   }
 }
 
-async function delete_product(req, res) {
+async function DELETE_product(req, res) {
   const { _id } = req.params;
 
   try {
@@ -67,7 +74,6 @@ async function delete_product(req, res) {
       success: true,
       status: 200,
       msg: `Deleted`,
-      data: deletedProduct,
     });
   } catch (error) {
     return res.json({
@@ -78,7 +84,7 @@ async function delete_product(req, res) {
   }
 }
 
-async function get_find_one_product(req, res) {
+async function GET_find_one(req, res) {
   const { _id } = req.params;
   // params khi can truyen len du lieu nho
   // body khi can tryen 1 dong du lieu
@@ -100,7 +106,7 @@ async function get_find_one_product(req, res) {
   }
 }
 
-async function get_find_many_product(req, res) {
+async function GET_find_many(req, res) {
   const { keyword } = req.params;
   let regex = { $regex: keyword, $options: "i" };
 
@@ -126,10 +132,4 @@ async function get_find_many_product(req, res) {
   }
 }
 
-export {
-  post_create_product,
-  put_update_product,
-  delete_product,
-  get_find_one_product,
-  get_find_many_product,
-};
+export { POST_create, PUT_udpate, DELETE_product, GET_find_one, GET_find_many };

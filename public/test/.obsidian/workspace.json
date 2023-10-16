@@ -1,0 +1,189 @@
+{
+  "main": {
+    "id": "1c4454a2956b7b01",
+    "type": "split",
+    "children": [
+      {
+        "id": "729a74cff95dc165",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "aae7c70ca104d171",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "27c3f3a66e908677",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Zetta/Ý tưởng ban đầu.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6d95c9a6f3b03e7b",
+    "type": "split",
+    "children": [
+      {
+        "id": "59360e6e18231ba6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e8f9e75b1d701d6f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "90957757d631d13e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#idea",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1769c9f8cfff8f72",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "43a38f45975a41f6",
+    "type": "split",
+    "children": [
+      {
+        "id": "6d6c6934858c00e7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "83a8c4e3d0c90557",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Zetta/Ý tưởng ban đầu.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "9c01094d5bf695a5",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Zetta/Ý tưởng ban đầu.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "517c17727285e238",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "0dfff30b10f9b11e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Zetta/Ý tưởng ban đầu.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 256.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "27c3f3a66e908677",
+  "lastOpenFiles": [
+    "Zetta/Study method.md",
+    "Zetta/Ý tưởng ban đầu.md",
+    "Template/Template.md",
+    "Zetta/My new life.md",
+    "Zetta/Computer security.md",
+    "Zetta/CNTT.md",
+    "Zetta/khong phai tag.md",
+    "Zetta/Automation testing.md",
+    "Zetta/Blockchain.md",
+    "Files/My thoughts.md",
+    "Untitled.canvas",
+    "Zetta/Đây là tiêu đề mới.md",
+    "Zetta/Á đù dân chơi.md",
+    "Zetta/Zette 1.md",
+    "Zetta/Second note.md",
+    "New note.md",
+    "Template",
+    "Reference note",
+    "Zetta",
+    "Files",
+    "2023-10-14.md",
+    "new note.md",
+    "Untitled 1.canvas",
+    "Assets/w2.jpg",
+    "w2.jpg.md",
+    "Assets",
+    "2023-10-13.md"
+  ]
+}
