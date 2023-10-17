@@ -4,31 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "729a74cff95dc165",
+        "id": "3d3adb068c98c398",
         "type": "tabs",
         "children": [
           {
-            "id": "aae7c70ca104d171",
+            "id": "070e14429fc36b1a",
             "type": "leaf",
             "state": {
               "type": "empty",
               "state": {}
             }
-          },
-          {
-            "id": "27c3f3a66e908677",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Zetta/Ý tưởng ban đầu.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -94,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Zetta/Ý tưởng ban đầu.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Zetta/Ý tưởng ban đầu.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Zetta/Ý tưởng ban đầu.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -156,11 +139,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "27c3f3a66e908677",
+  "active": "070e14429fc36b1a",
   "lastOpenFiles": [
-    "Zetta/Study method.md",
-    "Zetta/Ý tưởng ban đầu.md",
     "Template/Template.md",
+    "Zetta/Kế hoạch cho sự nghiệp.md",
+    "Zetta/Ý tưởng ban đầu.md",
+    "Zetta/Study method.md",
     "Zetta/My new life.md",
     "Zetta/Computer security.md",
     "Zetta/CNTT.md",

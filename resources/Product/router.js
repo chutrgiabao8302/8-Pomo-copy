@@ -4,6 +4,7 @@ import {
   DELETE_product,
   GET_find_one,
   GET_find_many,
+  PUT_sell,
 } from "./resolver.js";
 import express from "express";
 const router = express.Router();
@@ -11,6 +12,8 @@ const router = express.Router();
 router.post("/create", POST_create);
 
 router.put("/update", PUT_udpate);
+
+router.put("/sell", PUT_sell);
 
 router.delete("/delete/:_id", DELETE_product);
 

@@ -35,6 +35,54 @@ async function POST_create(req, res) {
   }
 }
 
+async function GET_find_one(req, res) {
+  const { _id } = req.params;
+  // params khi can truyen len du lieu nho
+  // body khi can tryen 1 dong du lieu
+  // phuong thuc GET (chi dung truy van) khong ho tro truyen body
+  try {
+    let myProduct = await Product.findById(_id).lean();
+    return res.json({
+      success: true,
+      status: 200,
+      msg: `Product found`,
+      data: myProduct,
+    });
+  } catch (error) {
+    return res.json({
+      success: false,
+      status: 404,
+      msg: `Product not found`,
+    });
+  }
+}
+
+async function GET_find_many(req, res) {
+  const { keyword } = req.params;
+  let regex = { $regex: keyword, $options: "i" };
+
+  let options = [{ product_name: regex }, { origin: regex }, { brand: regex }];
+
+  let products = await Product.find({
+    $or: options,
+  });
+  // tim theo id thi nen try catch
+  if (products.length == 0) {
+    return res.json({
+      success: false,
+      status: 404,
+      msg: `Products not found`,
+    });
+  } else {
+    return res.json({
+      success: true,
+      status: 200,
+      msg: `Products found`,
+      data: products,
+    });
+  }
+}
+
 async function PUT_udpate(req, res) {
   const { _id, product_name, price, quantity, catergory, brand, desc, origin } =
     req.body;
@@ -84,52 +132,39 @@ async function DELETE_product(req, res) {
   }
 }
 
-async function GET_find_one(req, res) {
-  const { _id } = req.params;
-  // params khi can truyen len du lieu nho
-  // body khi can tryen 1 dong du lieu
-  // phuong thuc GET (chi dung truy van) khong ho tro truyen body
-  try {
-    let myProduct = await Product.findById(_id).lean();
-    return res.json({
-      success: true,
-      status: 200,
-      msg: `Product found`,
-      data: myProduct,
-    });
-  } catch (error) {
-    return res.json({
-      success: false,
-      status: 404,
-      msg: `Product not found`,
-    });
+async function PUT_sell(req, res) {
+  const { _id, product_name, quantity } = req.body;
+
+  let myProduct = await Product.findById(_id);
+
+  if (myProduct) {
+    if (myProduct.quantity >= quantity) {
+      myProduct.quantity -= quantity;
+      await myProduct.save();
+      return res.json({
+        success: true,
+        status: 200,
+        msg: `Item sold ${quantity} unit`,
+      });
+    } else {
+      return res.json({
+        success: false,
+        status: 400,
+        msg: `Item sold out`,
+        data: {
+          product_name,
+          price,
+        },
+      });
+    }
   }
 }
 
-async function GET_find_many(req, res) {
-  const { keyword } = req.params;
-  let regex = { $regex: keyword, $options: "i" };
-
-  let options = [{ product_name: regex }, { origin: regex }, { brand: regex }];
-
-  let products = await Product.find({
-    $or: options,
-  });
-  // tim theo id thi nen try catch
-  if (products.length == 0) {
-    return res.json({
-      success: false,
-      status: 404,
-      msg: `Products not found`,
-    });
-  } else {
-    return res.json({
-      success: true,
-      status: 200,
-      msg: `Products found`,
-      data: products,
-    });
-  }
-}
-
-export { POST_create, PUT_udpate, DELETE_product, GET_find_one, GET_find_many };
+export {
+  POST_create,
+  PUT_udpate,
+  DELETE_product,
+  GET_find_one,
+  GET_find_many,
+  PUT_sell,
+};
