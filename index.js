@@ -21,8 +21,8 @@ db.connect();
 import accountRouter from "./resources/Account/router.js";
 app.use("/account", accountRouter);
 
-import productRouter from "./resources/Product/router.js";
-app.use("/product", productRouter);
+import taskRouter from "./resources/Task/router.js"
+app.use("/task", taskRouter);
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);

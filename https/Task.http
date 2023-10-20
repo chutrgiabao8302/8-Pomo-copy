@@ -1,0 +1,43 @@
+###
+
+
+POST http://localhost:3000/task/create
+content-type: application/json
+
+{
+    "title": "Do work",
+    "content": "Do somthing",
+    "duration": 50,
+    "status": "Do-ing",
+    "note": "Finish before 2PM",
+    "owner": "6532524aa0b5ef7b000606df"
+}
+
+###
+DELETE http://localhost:3000/task/delete/6532488b108752f6f500f51e
+
+
+###
+
+PUT http://localhost:3000/task/update
+content-type: application/json
+
+{
+    "_id": "653248cf2a11f99a40e4f028",
+    "title": "Do another work",
+    "content": "New content",
+    "duration": 120,
+    "note": "New note",
+    "status" : "Finished"
+}
+
+
+###
+
+GET http://localhost:3000/task/find_one/653248cf2a11f99a40e4f028
+
+
+###
+GET http://localhost:3000/task/find_many/6532524aa0b5ef7b000606df
+
+

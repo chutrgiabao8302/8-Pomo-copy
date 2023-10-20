@@ -1,0 +1,14 @@
+###
+
+POST http://localhost:3000/account/register
+content-type: application/json
+
+{
+    "username": "phu",
+    "password": "123123",
+    "email": "baochu8302@gmail.com",
+    "address": "123 St.",
+    "age": 21,
+    "main_color": "#a84032"
+}
+
