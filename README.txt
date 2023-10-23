@@ -36,7 +36,15 @@ hoặc tài khoản được tạo trên website.
 	+ Cập nhật ghi chú 
 	+ Cập nhật Deadline 
 	
-- Xóa đầu việc
+- Xóa 1 công việc: User có thể xóa 01 công việc bằng cách
+lựa chọn "Delete".
+
+- Xóa tất cả công việc: User có thể xóa nhiều công việc bằng cách 
+lựa chọn "Clear all".
+
+- Xóa những công việc đã hoàn thành: User có thể xóa những công 
+việc đã hoàn thành bằng cách lựa chọn "Clear finished tasks"
+
 
 - Tạo mẫu (template) danh sách đầu việc: User có thể lưu các 
 công việc lập lại thường xuyên vào một bài mẫu (Template)
@@ -46,19 +54,38 @@ công việc lập lại thường xuyên vào một bài mẫu (Template)
 
 =======Hẹn giờ======
 - Hẹn giờ (CHỨC NĂNG CHÍNH): 
-	User có thể hẹn giờ, lựa chọn giờ nghỉ ngắn, hay nghỉ dài.
-	Và mỗi khi hoàn thành một hiệp, dữ liệu phải được ghi lại để tương tác dữ
-	liệu với những chức năng khác (dể đánh dấu số hiệp đã trôi qua)
+	User có thể hẹn giờ, lựa chọn hiệp nghỉ ngắn, hay hiệp nghỉ dài.
+	Và mỗi khi hoàn thành một hiệp, dữ liệu phải được ghi lại để 
+	tương tác dữ liệu với những chức năng khác (dể đánh dấu 
+	số hiệp đã trôi qua)
 
-- Điều chỉnh giờ: User có thể điều chỉnh giờ của 3 
-loại: giờ làm việc, giờ nghỉ ngắn, giờ nghỉ dài theo
+- Điều chỉnh giờ: User có thể điều chỉnh thời lượng của 3 
+hiệp: hiệp làm việc, hiệp nghỉ ngắn, hiệp nghỉ dài theo
 nhu cầu cá nhân
 
-- Thông báo (thắc mắc: nên là chức năng riêng biệt,
-	hay được xem là chức năng phụ của Hẹn giờ)
+- Thông báo khi hết giờ: User sẽ nhận đưuọc thông báo khi hết hiệp và
+khi bắt đầu hiệp mới (áp dụng cho cả hiệp tập trung và hiệp giải lao)
+
+- Bấm "Start" để bắt đầu hiệp mới: User có thể bấm nút "Continue"
+để chuyển sang hiệp tiếp theo. Có thể thực hiện được cả trong hiệp
+Tập trung và các hiệp giải lao.
+
+- Bấm "Pause" để tạm dừng: User có thể bấm nút "Pause" để tạm dừng
+thời gian. Có thể thực thiện được cả trong hiệp Tập trung hay các 
+hiệp giải lao.
+
+- Lưu số hiệp Tập trung đã hoàn thành: User có thể theo dõi số hiệp 
+Tập trung của mình. Ví dụ trên giao diện thể hiện "#3" => User 
+đã trải qua 3 hiệp Pomodoro
+
+- Tải lại số hiệp Tập trung: User có thể click lên số hiệp và lựa chọn 
+reset số hiệp Pomodoro.
 	
-
-
+=======Giao diện======
+- Màu nền được hiển thị riêng biệt trong từng hiệp:
+	+ Khi ở hiệp Tập trung: giao diện hiển thị màu đỏ
+	+ Khi ở hiệp Nghỉ ngắn: giao diện màu xanh da trời
+	+ Khi ở hiệp Nghỉ dài: giao diện màu xanh biển
 
 Tại sao tôi lại phát triển những chức năng đó?
 
