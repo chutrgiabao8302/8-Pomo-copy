@@ -1,0 +1,44 @@
+params khi can truyen len du lieu nho
+body khi can tryen 1 dong du lieu
+phuong thuc GET (chi dung truy van) khong ho tro truyen body
+
+"/:_id" có nghĩa là truyền tham số (params)
+bản chất của hàm find là hàm read trong CRUD (vì đọc trnong 
+database và trả về kết quả nếu tìm được)
+
+
+
+sử dụng các câu lệnh sau:
+
+npm i 
+npm i nodemon --save-dev
+npm start
+
+
+CART    
+    add item to CART
+    remove item
+    check out 
+
+===
+16/10/23
+Done:
+    - Học lại cách code các phương thức CRUD => tương ứng với mỗi function sẽ 
+sử dụng method (get, post, put, delete,...) nào cho phù hợp nhất
+    - Ôn lại về những câu lệnh cài đặt môi trường (đọc lại ở phần trên)
+    - Học thêm cách viết theo micro service (thay vì như dự
+án cũ là viết theo Monolith -> rất khó fix bug khi gặp vấn đề ở 
+những dự án lớn)
+
+22/10/23
+Done:
+Làm lại từ đầu, bắt đầu từ việc phân tích hệ thống
+
+
+
+
+
+
+
+
+
