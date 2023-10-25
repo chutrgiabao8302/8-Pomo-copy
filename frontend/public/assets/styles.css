@@ -96,7 +96,8 @@ h1 {
 
 .container-todo {
     position: absolute;
-    bottom: 20px;
+    top: 80%;
+    margin-bottom: 50px;
     width: 35vw;
     margin: 0 auto;
     background: #fff;
@@ -159,9 +160,9 @@ li {
             border-radius: 5px;
             cursor: pointer;
             margin-right: 5px;
-        }
+}
 
-        .task-finished {
-            text-decoration: line-through;
-            color: #777;
-        }
+.task-finished {
+    text-decoration: line-through;
+    color: #777;
+}

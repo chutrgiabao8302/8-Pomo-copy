@@ -1,9 +1,4 @@
 <div class="center-box">
-    <div class="header">
-      <div class="logo">Pomofocus</div>
-      <div class="login">Login</div>
-      <div class="register">Register</div>
-    </div>
     <div class="container">
       <div class="section-container">
         <button id="focus" class="btn btn-timer btn-focus">Focus</button>
@@ -28,7 +23,7 @@
         <!-- To-Do list items will be dynamically added here -->
       </ul>
       <div class="add-task">
-        <input type="text" id="task" class="task-input" placeholder="Add a new task">
+        <input type="text" id="task" class="task-input" placeholder="Add a new task" onkeyup="handleKeyUp(event)">
         <button id="add" class="add-button">Add</button>
       </div>
     </div>

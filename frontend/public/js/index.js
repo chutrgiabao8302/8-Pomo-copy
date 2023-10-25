@@ -117,28 +117,38 @@ startBtn.addEventListener("click", () => {
   }
 });
 
+function addTask() {
+ const taskText = taskInput.value.trim();
+ if (taskText !== '') {
+     const li = document.createElement('li');
+     li.innerHTML = `
+         <span class="task">${taskText}</span>
+         <button class="finish-button">Finish</button>
+         <button class="delete-button">Delete</button>
+     `;
+     taskList.appendChild(li);
+     taskInput.value = '';
+
+     const deleteButton = li.querySelector('.delete-button');
+     deleteButton.addEventListener('click', () => {
+         taskList.removeChild(li);
+     });
+
+     const finishButton = li.querySelector('.finish-button');
+     finishButton.addEventListener('click', () => {
+         li.querySelector('.task').classList.add('task-finished');
+         finishButton.disabled = true;
+     });
+ }
+}
 
 addButton.addEventListener('click', () => {
-    const taskText = taskInput.value.trim();
-    if (taskText !== '') {
-        const li = document.createElement('li');
-        li.innerHTML = `
-            <span class="task">${taskText}</span>
-            <button class="finish-button">Finish</button>
-            <button class="delete-button">Delete</button>
-        `;
-        taskList.appendChild(li);
-        taskInput.value = '';
-
-        const deleteButton = li.querySelector('.delete-button');
-        deleteButton.addEventListener('click', () => {
-            taskList.removeChild(li);
-        });
-
-        const finishButton = li.querySelector('.finish-button');
-        finishButton.addEventListener('click', () => {
-            li.querySelector('.task').classList.add('task-finished');
-            finishButton.disabled = true;
-        });
-    }
+  addTask();
 });
+
+function handleKeyUp(event) {
+  if (event.key === "Enter") {
+      event.preventDefault(); // Prevent the default form submission
+      addTask();
+  }
+}

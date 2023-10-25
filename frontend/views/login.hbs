@@ -18,7 +18,7 @@
               ></path>
             </g>
           </svg>
-          <input name="username" type="text" class="input" placeholder="Enter your Email" />
+          <input name="username" type="text" class="input" placeholder="Enter your Email" value="{{username}}" />
         </div>
 
         <div class="flex-column">
@@ -63,6 +63,19 @@
           <span class="span">Forgot password?</span>
         </div>
         <button class="button-submit">Sign In</button>
+        {{#if success}}
+          <div class="alert alert-success" role="alert">
+            {{success}}
+          </div>
+        {{/if}}
+
+        {{#if error}}
+          <div class="alert alert-danger" role="alert">
+            {{error}}
+          </div>
+        {{/if}}
+
+
         <p class="p">
           Don't have an account? <span class="span">Sign Up</span>
         </p>
