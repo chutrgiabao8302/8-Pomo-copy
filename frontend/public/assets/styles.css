@@ -1,0 +1,167 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  body {
+    background-color: #cd202d;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+
+  .center-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  .container {
+    background-color: #1b1b1b;
+    width: 35vw;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 4em 2em;
+    border-radius: 0.5em;
+  }
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .section-container {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+  }
+  .btn {
+    padding: 1em 2em;
+    border-radius: 0.5em;
+    background-color: #3e3f43;
+    color: #a9a7a7;
+  }
+  .btn-focus {
+    background-color: #cb202d;
+    color: #ffffff;
+  }
+  .time-btn-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+  }
+  #time {
+    text-align: center;
+    color: #fff;
+    font-size: 5em;
+    font-weight: 600;
+  }
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+  }
+  #btn-start,
+  #btn-pause {
+    padding: 1em 2em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    background-color: #ffffff;
+  }
+  #btn-reset {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 2em;
+  }
+  .hide {
+    display: none;
+  }
+  .show {
+    display: block;
+  }
+  
+
+/* This is todo list CSS */
+
+h1 {
+    color: #333;
+}
+
+.container-todo {
+    position: absolute;
+    bottom: 20px;
+    width: 35vw;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.task {
+    flex: 1;
+}
+
+.delete-button {
+    background: #ff4136;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-task {
+    display: flex;
+    margin-top: 20px;
+}
+
+.task-input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-button {
+    background: #2ecc71;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.finish-button {
+            background: #3498db;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        .task-finished {
+            text-decoration: line-through;
+            color: #777;
+        }

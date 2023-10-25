@@ -24,6 +24,8 @@ app.use("/account", accountRouter);
 import taskRouter from "./resources/Task/router.js";
 app.use("/task", taskRouter);
 
+app.get("/", )
+
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });

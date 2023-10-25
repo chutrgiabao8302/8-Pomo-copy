@@ -1,163 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pomodoro Timer</title>
-    <style>
-      body {
-        font-family: "Arial", sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        background-color: #f2f2f2;
-      }
 
-      .container {
-        background-color: #ffffff;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        width: 300px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pomodoro timer</title>
 
-      .display {
-        font-size: 3em;
-        text-align: center;
-        margin-bottom: 10px;
-      }
+  <!-- Font awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <!-- CSS link -->
+  <link rel="stylesheet" href="../public/assets/styles.css" />
 
-      .buttons {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-      }
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+</head>
 
-      .controls {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-      }
-
-      .todo-list {
-        position: relative;
-      }
-
-      #todo-input {
-        width: 200px;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        outline: none;
-      }
-
-      #add-todo {
-        position: absolute;
-        top: 5px;
-        right: 10px;
-        padding: 5px 10px;
-        border: none;
-        border-radius: 5px;
-        background-color: #4caf50;
-        color: white;
-        cursor: pointer;
-      }
-
-      #todo-list {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      #todo-list li {
-        padding: 10px;
-        margin-bottom: 5px;
-        background-color: #f2f2f2;
-        border-radius: 5px;
-      }
-    </style>
-  </head>
-
-  <body>
+<body>
+  <div class="center-box">
+    <div class="header">
+      <div class="logo">Pomofocus</div>
+      <div class="login">Login</div>
+      <div class="register">Register</div>
+    </div>
     <div class="container">
-      <div class="display">25:00</div>
-      <div class="buttons">
-        <button id="start">Start</button>
-        <button id="stop">Stop</button>
-        <button id="reset">Reset</button>
+      <div class="section-container">
+        <button id="focus" class="btn btn-timer btn-focus">Focus</button>
+        <button id="shortbreak" class="btn btn-shortbreak">Short break</button>
+        <button id="longbreak" class="btn btn-longbreak">Long break</button>
       </div>
-      <div class="controls">
-        <span>Type:</span>
-        <select id="type">
-          <option value="pomodoro">Pomodoro</option>
-          <option value="short_break">Short Break</option>
-          <option value="long_break">Long Break</option>
-        </select>
-      </div>
-      <div class="todo-list">
-        <input type="text" id="todo-input" placeholder="Enter task" />
-        <button id="add-todo">Add</button>
-        <ul id="todo-list"></ul>
+      <div class="time-btn-container">
+        <span id="time"></span>
+        <div class="btn-container">
+          <button id="btn-start" class="show">Start</button>
+          <button id="btn-pause" class="hide">Pause</button>
+          <button id="btn-reset" class="hide">
+            <i class="fa-solid fa-rotate-right"></i>
+          </button>
+        </div>
       </div>
     </div>
 
-    <script>
-      const display = document.querySelector(".display");
-      const startButton = document.getElementById("start");
-      const stopButton = document.getElementById("stop");
-      const resetButton = document.getElementById("reset");
-      const typeSelect = document.getElementById("type");
-      const todoInput = document.getElementById("todo-input");
-      const addTodoButton = document.getElementById("add-todo");
-      const todoList = document.getElementById("todo-list");
+    <div class="container-todo">
+      <h1>To-Do List</h1>
+      <ul id="task-list">
+        <!-- To-Do list items will be dynamically added here -->
+      </ul>
+      <div class="add-task">
+        <input type="text" id="task" class="task-input" placeholder="Add a new task">
+        <button id="add" class="add-button">Add</button>
+      </div>
+    </div>
 
-      let timer;
-      let remainingTime;
 
-      function startTimer() {
-        timer = setInterval(() => {
-          remainingTime -= 1;
-          if (remainingTime < 0) {
-            clearInterval(timer);
-            remainingTime = 0;
-          }
-          display.textContent = formatTime(remainingTime);
-        }, 1000);
-      }
+  </div>
+  <!-- JS Script -->
+  <script src="../js/index.js"></script>
+</body>
 
-      function stopTimer() {
-        clearInterval(timer);
-      }
-
-      function resetTimer() {
-        clearInterval(timer);
-        remainingTime = typeSelect.value === "pomodoro" ? 25 * 60 : 5 * 60;
-        display.textContent = formatTime(remainingTime);
-      }
-
-      function formatTime(seconds) {
-        const minutes = Math.floor(seconds / 60);
-        const remainderSeconds = seconds % 60;
-        return `${minutes}:${
-          remainderSeconds < 10 ? "0" : ""
-        }${remainderSeconds}`;
-      }
-
-      startButton.addEventListener("click", startTimer);
-      stopButton.addEventListener("click", stopTimer);
-      resetButton.addEventListener("click", resetTimer);
-
-      addTodoButton.addEventListener("click", () => {
-        const li = document.createElement("li");
-        li.textContent = todoInput.value;
-        todoList.appendChild(li);
-        todoInput.value = "";
-      });
-
-      resetTimer();
-    </script>
-  </body>
 </html>
