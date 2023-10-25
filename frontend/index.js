@@ -5,7 +5,7 @@ const handlebars = require("express-handlebars");
 const cors = require("cors");
 const path = require("path");
 const cookieParser = require("cookie-parser");
-
+const fetch = require('node-fetch');
 const PORT = 5000;
 
 // Load variables
@@ -33,6 +33,8 @@ app.engine(
 
 app.set("views", path.join(__dirname, "./views"));
 app.use(express.static(path.join(__dirname, "./public")));
+
+
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);

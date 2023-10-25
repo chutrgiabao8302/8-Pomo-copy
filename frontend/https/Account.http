@@ -1,0 +1,22 @@
+###
+
+
+POST http://localhost:5000/login 
+content-type: application/json
+
+{
+    "username": "nkeys",
+    "password": "123123"
+}
+
+###
+
+POST http://localhost:5000/register
+content-type: application/json
+
+{
+    "username": "nkeyskuo",
+    "password": "123123",
+    "address": "94/20",
+    "age": 27
+}
