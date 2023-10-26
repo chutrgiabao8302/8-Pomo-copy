@@ -15,10 +15,6 @@ npm i nodemon --save-dev
 npm start
 
 
-CART    
-    add item to CART
-    remove item
-    check out 
 
 ===
 16/10/23
@@ -35,7 +31,57 @@ Done:
 Làm lại từ đầu, bắt đầu từ việc phân tích hệ thống
 
 
+25/10/23
+- Áp dụng cách viết microservice
+    => Chia thư mục của front-end và back-end thành 
+    2 phần riêng biệt
 
+- Học cách sử dụng Handblebars
+    => Bản chất là thay thế HTML, được sử 
+    dụng khi có nhiều page sử dụng cùng một 
+    source HTML để tránh mất thời gian code lại
+
+    Khi này chỉ cần code phần <body></body>, phần
+    <head></head> và phần đuôi sử được lưu trong 
+    LAYOUT.
+
+- Học cách sử dụng REST client để dùng http
+test ngay các API (POST, GET, PUT, DELETE,..)
+của back-end và front-end
+
+- Học về dataflow của website 
+    Khi nhận được data từ User, phía client sẽ:
+    1. Đóng gói dữ liệu 
+        let body = JSON.stringify({ username, password });
+    
+    2. Gửi tính hiệu (Request)
+        await fetch(backend_URL + 'account/login', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: body
+        }) 
+
+    3. Sau khi nhận sẽ kiểm tra dữ liệu nhận được hay không
+        3.1. Nếu nhận được
+        .then(async result => {
+            result = await result.json(); // Mở gói dữ liệu
+
+            if(result.success == true){ // Xác nhận đúng mk
+            req.flash('succes', 'Đăng nhập thành công');
+            return res.redirect('/');
+            }
+            else { // Xác nhận không đúng mật khẩu
+            req.flash('error', 'Sai thông tin tài khoản');
+            req.flash('username', username);
+            return res.redirect('/login');
+            }
+        })
+
+        3.2. Nếu không nhận được
+        .catch(err => {
+            req.flash('error', 'Sai thông tin tài khoản');
+            return res.json(err);
+        })
 
 
 

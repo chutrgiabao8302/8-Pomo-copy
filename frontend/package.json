@@ -18,7 +18,8 @@
     "express-handlebars": "^7.1.2",
     "express-session": "^1.17.3",
     "node-fetch": "^2.7.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "sud-libs": "^1.2.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
